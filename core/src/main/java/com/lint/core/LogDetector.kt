@@ -20,8 +20,8 @@ class LogDetector : Detector(), Detector.UastScanner {
             "不要直接使用Log",
             "不要直接使用Log",
             Category.MESSAGES,
-            5,
-            Severity.WARNING,
+            7,
+            Severity.ERROR,
             Implementation(LogDetector::class.java, Scope.JAVA_FILE_SCOPE)
         )
     }
