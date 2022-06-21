@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
 
 android {
     compileSdk 32
@@ -29,3 +27,18 @@ dependencies {
     lintPublish project(':core')
 
 }
+
+//==============================JitPack 上传插件配置 start=====================
+apply plugin: 'com.github.dcendents.android-maven'
+//组名 com.github是固定的,后面的ChinaLike是我Github的用户名,替换成你自己的就可以了
+group='com.github.ChinaLike'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+//==============================JitPack 上传插件配置 end=======================

@@ -1,7 +1,6 @@
 package com.lint.core
 
 import com.android.tools.lint.client.api.IssueRegistry
-import com.android.tools.lint.client.api.Vendor
 import com.android.tools.lint.detector.api.CURRENT_API
 import com.android.tools.lint.detector.api.Issue
 
@@ -23,10 +22,4 @@ class LintRegistry : IssueRegistry() {
 
     override val minApi: Int
         get() = 8
-
-    override val vendor: Vendor = Vendor(
-        "Android Open Source Project",
-        "https://github.com/googlesamples/android-custom-lint-rules/issues",
-        "https://github.com/googlesamples/android-custom-lint-rules"
-    )
 }
