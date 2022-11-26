@@ -177,18 +177,18 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 27 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 29 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Thu Nov 24 16:07:45 CST 2022      </nav>
+Check performed at Sat Nov 26 18:19:37 CST 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (4)</a>
-      <a class="mdl-navigation__link" href="#LintImplTextFormat"><i class="material-icons warning-icon">warning</i>Lint Text Format (21)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (5)</a>
+      <a class="mdl-navigation__link" href="#LintImplTextFormat"><i class="material-icons warning-icon">warning</i>Lint Text Format (22)</a>
       <a class="mdl-navigation__link" href="#UastImplementation"><i class="material-icons warning-icon">warning</i>Avoid using UAST implementation (2)</a>
     </nav>
   </div>
@@ -205,12 +205,12 @@ Check performed at Thu Nov 24 16:07:45 CST 2022      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Lint Implementation Issues">Lint Implementation Issues</a>
 </td></tr>
 <tr>
-<td class="countColumn">21</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">22</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#LintImplTextFormat">LintImplTextFormat</a>: Lint Text Format</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -233,7 +233,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">build.gradle</a>:20</span>: <span class="message">A newer version of com.android.tools.lint:lint-api than 30.2.0 is available: 30.2.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">build.gradle</a>:20</span>: <span class="message">A newer version of com.android.tools.lint:lint-api than 30.2.0 is available: 30.3.1</span><br /><pre class="errorlines">
 <span class="lineno"> 17 </span>}
 <span class="lineno"> 18 </span>
 <span class="lineno"> 19 </span>dependencies {
@@ -242,7 +242,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 22 </span>    compileOnly <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"</span>
 <span class="lineno"> 23 </span>    testImplementation <span class="string">"junit:junit:4.13.2"</span></pre>
 
-<span class="location"><a href="../../build.gradle">build.gradle</a>:21</span>: <span class="message">A newer version of com.android.tools.lint:lint-checks than 30.2.0 is available: 30.2.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">build.gradle</a>:21</span>: <span class="message">A newer version of com.android.tools.lint:lint-checks than 30.2.0 is available: 30.3.1</span><br /><pre class="errorlines">
 <span class="lineno"> 18 </span>
 <span class="lineno"> 19 </span>dependencies {
 <span class="lineno"> 20 </span>    compileOnly <span class="string">"com.android.tools.lint:lint-api:$lintVersion"</span>
@@ -260,13 +260,23 @@ Dismiss</button>            </div>
 <span class="lineno"> 24 </span>    testImplementation <span class="string">"com.android.tools.lint:lint:$lintVersion"</span>
 <span class="lineno"> 25 </span>    testImplementation <span class="string">"com.android.tools.lint:lint-tests:$lintVersion"</span></pre>
 
-<span class="location"><a href="../../build.gradle">build.gradle</a>:24</span>: <span class="message">A newer version of com.android.tools.lint:lint than 30.2.0 is available: 30.2.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle">build.gradle</a>:24</span>: <span class="message">A newer version of com.android.tools.lint:lint than 30.2.0 is available: 30.3.1</span><br /><pre class="errorlines">
 <span class="lineno"> 21 </span>    compileOnly <span class="string">"com.android.tools.lint:lint-checks:$lintVersion"</span>
 <span class="lineno"> 22 </span>    compileOnly <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"</span>
 <span class="lineno"> 23 </span>    testImplementation <span class="string">"junit:junit:4.13.2"</span>
 <span class="caretline"><span class="lineno"> 24 </span>    testImplementation <span class="warning"><span class="string">"com.android.tools.lint:lint:$lintVersion"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 25 </span>    testImplementation <span class="string">"com.android.tools.lint:lint-tests:$lintVersion"</span>
 <span class="lineno"> 26 </span>}
+</pre>
+
+<span class="location"><a href="../../build.gradle">build.gradle</a>:25</span>: <span class="message">A newer version of com.android.tools.lint:lint-tests than 30.2.0 is available: 30.3.1</span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span>    compileOnly <span class="string">"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"</span>
+<span class="lineno"> 23 </span>    testImplementation <span class="string">"junit:junit:4.13.2"</span>
+<span class="lineno"> 24 </span>    testImplementation <span class="string">"com.android.tools.lint:lint:$lintVersion"</span>
+<span class="caretline"><span class="lineno"> 25 </span>    testImplementation <span class="warning"><span class="string">"com.android.tools.lint:lint-tests:$lintVersion"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 26 </span>}
+<span class="lineno"> 27 </span>
+<span class="lineno"> 28 </span>sourceCompatibility = JavaVersion.VERSION_1_8
 </pre>
 
 </div>
@@ -345,6 +355,28 @@ Dismiss</button>            </div>
 <span class="lineno"> 55 </span>    }
 <span class="lineno"> 56 </span>}</pre>
 
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:270</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 267 </span>            }
+<span class="lineno"> 268 </span>            ANDROID_SHAPEABLE_IMAGE_VIEW -> {
+<span class="lineno"> 269 </span>                <span class="comment">//ShapeableImageView</span>
+<span class="caretline"><span class="lineno"> 270 </span>                <span class="warning">println(<span class="string">"测试"</span>+ CARD_VIEW.newName())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 271 </span>                context.report(
+<span class="lineno"> 272 </span>                    SHAPEABLE_IMAGE_ISSUE,
+<span class="lineno"> 273 </span>                    element,
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="LintImplTextFormatDivLink" onclick="reveal('LintImplTextFormatDiv');" />+ 17 More Occurrences...</button>
+<div id="LintImplTextFormatDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:281</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 278 </span>            }
+<span class="lineno"> 279 </span>            CARD_VIEW.oldName(), CARD_VIEW.newName() -> {
+<span class="lineno"> 280 </span>                <span class="comment">//Card</span>
+<span class="caretline"><span class="lineno"> 281 </span>                <span class="warning">println(<span class="string">"测试"</span>+ CARD_VIEW.oldName())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 282 </span>                context.report(
+<span class="lineno"> 283 </span>                    CARD_ISSUE,
+<span class="lineno"> 284 </span>                    element,
+</pre>
+
 <span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:29</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
 <span class="lineno"> 26 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
 <span class="lineno"> 27 </span>            <span class="string">"FragmentStandard"</span>,
@@ -355,8 +387,6 @@ Dismiss</button>            </div>
 <span class="lineno"> 32 </span>            Severity.FATAL,
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="LintImplTextFormatDivLink" onclick="reveal('LintImplTextFormatDiv');" />+ 16 More Occurrences...</button>
-<div id="LintImplTextFormatDiv" style="display: none">
 <span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:52</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
 <span class="lineno"> 49 </span>        }
 <span class="lineno"> 50 </span>        <span class="comment">//判断是否继承指定类</span>
@@ -366,44 +396,34 @@ Dismiss</button>            </div>
 <span class="lineno"> 54 </span>    }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/LayoutDetector.kt">src/main/java/com/lint/core/detector/LayoutDetector.kt</a>:82</span>: <span class="message">"XTextView" looks like a code reference; surround with backtics in string to display as symbol, e.g. `XTextView`</span><br /><pre class="errorlines">
-<span class="lineno">  79 </span>        <span class="keyword">val</span> TEXT_VIEW_ISSUE = Issue.create(
-<span class="lineno">  80 </span>            <span class="string">"TextViewStandard"</span>,
-<span class="lineno">  81 </span>            TEXT_VIEW_MESSAGE,
-<span class="caretline"><span class="lineno">  82 </span>            <span class="warning">TEXT_VIEW_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  83 </span>            category,
-<span class="lineno">  84 </span>            priority,
-<span class="lineno">  85 </span>            severity,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:16</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
+<span class="lineno"> 13 </span>
+<span class="lineno"> 14 </span>    companion <span class="keyword">object</span> {
+<span class="lineno"> 15 </span>
+<span class="caretline"><span class="lineno"> 16 </span>        const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 17 </span>
+<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/LayoutDetector.kt">src/main/java/com/lint/core/detector/LayoutDetector.kt</a>:94</span>: <span class="message">"XEditText" looks like a code reference; surround with backtics in string to display as symbol, e.g. `XEditText`</span><br /><pre class="errorlines">
-<span class="lineno">  91 </span>        <span class="keyword">val</span> EDIT_TEXT_ISSUE = Issue.create(
-<span class="lineno">  92 </span>            <span class="string">"EditTextStandard"</span>,
-<span class="lineno">  93 </span>            EDIT_TEXT_MESSAGE,
-<span class="caretline"><span class="lineno">  94 </span>            <span class="warning">EDIT_TEXT_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  95 </span>            category,
-<span class="lineno">  96 </span>            priority,
-<span class="lineno">  97 </span>            severity,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:16</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
+<span class="lineno"> 13 </span>
+<span class="lineno"> 14 </span>    companion <span class="keyword">object</span> {
+<span class="lineno"> 15 </span>
+<span class="caretline"><span class="lineno"> 16 </span>        const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 17 </span>
+<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/LayoutDetector.kt">src/main/java/com/lint/core/detector/LayoutDetector.kt</a>:137</span>: <span class="message">"XTextView" looks like a code reference; surround with backtics in string to display as symbol, e.g. `XTextView`</span><br /><pre class="errorlines">
-<span class="lineno"> 134 </span>                    TEXT_VIEW_ISSUE,
-<span class="lineno"> 135 </span>                    element,
-<span class="lineno"> 136 </span>                    context.getNameLocation(element),
-<span class="caretline"><span class="lineno"> 137 </span>                    <span class="warning">TEXT_VIEW_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 138 </span>                    lintFix(replaceTextView, name)
-<span class="lineno"> 139 </span>                )
-<span class="lineno"> 140 </span>            }
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/LayoutDetector.kt">src/main/java/com/lint/core/detector/LayoutDetector.kt</a>:147</span>: <span class="message">"XEditText" looks like a code reference; surround with backtics in string to display as symbol, e.g. `XEditText`</span><br /><pre class="errorlines">
-<span class="lineno"> 144 </span>                    EDIT_TEXT_ISSUE,
-<span class="lineno"> 145 </span>                    element,
-<span class="lineno"> 146 </span>                    context.getNameLocation(element),
-<span class="caretline"><span class="lineno"> 147 </span>                    <span class="warning">EDIT_TEXT_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 148 </span>                    lintFix(replaceEditText, name)
-<span class="lineno"> 149 </span>                )
-<span class="lineno"> 150 </span>            }
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:21</span>: <span class="message">The issue summary should be capitalized</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 20 </span>            <span class="string">"ClickStandard"</span>,
+<span class="caretline"><span class="lineno"> 21 </span>            <span class="string">"</span><span class="warning"><span class="string">setOnClickListener不能防重点击，建议替换</span></span><span class="string">"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span>            MESSAGE,
+<span class="lineno"> 23 </span>            Category.MESSAGES,
+<span class="lineno"> 24 </span>            <span class="number">7</span>,
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:27</span>: <span class="message">"parseColor" looks like a code reference; surround with backtics in string to display as symbol, e.g. `parseColor`</span><br /><pre class="errorlines">

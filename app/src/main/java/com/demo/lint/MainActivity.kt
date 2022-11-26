@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
@@ -37,11 +38,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             e.printStackTrace()
         }
 
+        View(this).setOnClickListener{
+
+        }
+
+        AppCompatTextView(this).setOnClickListener {
+
+        }
 
     }
 
+    //测试单行注释，是不是这样!
     override fun onClick(p0: View?) {
-
+        //测试单行注释，是不是这样.
     }
 
     private fun checkSelfPermission() {

@@ -27,16 +27,21 @@ class LintRegistry : IssueRegistry() {
         PermissionDetector.ISSUE,
         ParseDetector.COLOR_ISSUE,
         DialogDetector.ISSUE,
-        AlertDialogDetector.ISSUE,
-        LayoutDetector.TEXT_VIEW_ISSUE,
-        LayoutDetector.EDIT_TEXT_ISSUE,
-        LayoutDetector.BUTTON_ISSUE,
-        LayoutDetector.IMAGE_ISSUE,
-        LayoutDetector.CARD_ISSUE,
-        LayoutDetector.CHECK_BOX_ISSUE,
-        LayoutDetector.SCROLL_VIEW_ISSUE,
-        LayoutDetector.TAB_LAYOUT_ISSUE,
-        LayoutDetector.RECYCLER_VIEW_ISSUE,
+        CustomLayoutDetector.TEXT_VIEW_ISSUE,
+        CustomLayoutDetector.EDIT_TEXT_ISSUE,
+        CustomLayoutDetector.BUTTON_ISSUE,
+        CustomLayoutDetector.IMAGE_ISSUE,
+        CustomLayoutDetector.SHAPEABLE_IMAGE_ISSUE,
+        CustomLayoutDetector.CARD_ISSUE,
+        CustomLayoutDetector.CHECK_BOX_ISSUE,
+        CustomLayoutDetector.SCROLL_VIEW_ISSUE,
+        CustomLayoutDetector.TAB_LAYOUT_ISSUE,
+        CustomLayoutDetector.RECYCLER_VIEW_ISSUE,
+        ColorCasingDetector.ISSUE,
+        OnClickListenerDetector.ISSUE,
+        RawColorDetector.ISSUE,
+        RawDimenDetector.ISSUE
+//        XmlSpacingDetector.ISSUE
 //        SerializableClassDetector.ISSUE
     )
 

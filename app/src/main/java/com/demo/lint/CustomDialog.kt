@@ -13,6 +13,10 @@ import com.lxj.xpopup.core.BasePopupView
 class CustomDialog(context: Context) : Dialog(context) {
 
     init {
+
+    }
+
+    private fun alertDialog(dialog:AlertDialog){
         AlertDialog.Builder(context)
     }
 }

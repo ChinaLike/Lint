@@ -2,10 +2,10 @@ package com.lint.core.detector
 
 import com.android.tools.lint.client.api.UElementHandler
 import com.android.tools.lint.detector.api.*
+import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiMethod
 import com.intellij.psi.PsiType
-import org.jetbrains.uast.UClass
-import org.jetbrains.uast.UElement
-import org.jetbrains.uast.UVariable
+import org.jetbrains.uast.*
 
 /**
  * 弹窗规范
@@ -20,6 +20,7 @@ class DialogDetector : Detector(), SourceCodeScanner {
         private const val dialogClass = "android.app.Dialog"
         private const val popupClass = "android.widget.PopupWindow"
         private const val alertDialogClass = "android.app.AlertDialog"
+        private const val alertDialogBuilderClass = "${alertDialogClass}.Builder"
 
         /**
          * 需要继承的类
@@ -55,12 +56,24 @@ class DialogDetector : Detector(), SourceCodeScanner {
         return listOf(dialogClass, popupClass)
     }
 
-//    override fun getApplicableUastTypes(): List<Class<out UElement>>? {
-//        return listOf<Class<out UElement>>(UVariable::class.java, UClass::class.java)
-//    }
-//
-//    override fun createUastHandler(context: JavaContext): UElementHandler? =
-//        AlertDialogUsageHandler(context)
+    override fun getApplicableConstructorTypes(): List<String>? {
+        return listOf(alertDialogClass, alertDialogBuilderClass)
+    }
+
+    override fun visitConstructor(
+        context: JavaContext,
+        node: UCallExpression,
+        constructor: PsiMethod
+    ) {
+        context.report(ALERT_DIALOG_ISSUE, node, context.getLocation(node), MESSAGE)
+    }
+
+    override fun getApplicableUastTypes(): List<Class<out UElement>>? {
+        return listOf<Class<out UElement>>(UVariable::class.java, UClass::class.java)
+    }
+
+    override fun createUastHandler(context: JavaContext): UElementHandler? =
+        AlertDialogUsageHandler(context)
 
     override fun visitClass(context: JavaContext, declaration: UClass) {
         val evaluator = context.evaluator

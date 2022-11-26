@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:layout_width="wrap_content"
+        android:layout_width="10dp"
+        android:textColor="#ffffff"
         android:layout_height="wrap_content"/>
 
     <EditText
@@ -73,6 +74,22 @@
         android:layout_height="wrap_content"/>
 
     <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="50dp"
+            android:layout_marginLeft="4dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
