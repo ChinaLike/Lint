@@ -2,6 +2,7 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
+import com.lint.core.Constants.ANDROID_THREAD
 import org.jetbrains.uast.UCallExpression
 
 /**
@@ -13,7 +14,7 @@ class ThreadDetector : Detector(), Detector.UastScanner {
 
     companion object {
 
-        const val MESSAGE = "请勿直接调用new Thread()，建议使用AsyncTask或统一的线程管理工具类"
+        private const val MESSAGE = "请勿直接调用new Thread()，建议使用AsyncTask或统一的线程管理工具类"
 
         @JvmField
         val ISSUE = Issue.create(
@@ -28,7 +29,7 @@ class ThreadDetector : Detector(), Detector.UastScanner {
     }
 
     override fun getApplicableConstructorTypes(): List<String>? {
-        return listOf("java.lang.Thread")
+        return listOf(ANDROID_THREAD)
     }
 
     override fun visitConstructor(

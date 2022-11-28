@@ -4,6 +4,7 @@ import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
 import com.intellij.psi.PsiTryStatement
 import com.intellij.psi.impl.source.tree.java.MethodElement
+import com.lint.core.Constants.ANDROID_COLOR
 import org.jetbrains.uast.UCallExpression
 import org.jetbrains.uast.UTryExpression
 import org.jetbrains.uast.getParentOfType
@@ -19,7 +20,7 @@ class ParseDetector : Detector(), Detector.UastScanner {
 
     companion object {
 
-        const val COLOR_MESSAGE = "使用【Color.parseColor】时请请添加【try catch】"
+        private const val COLOR_MESSAGE = "使用Color.parseColor需对异常进行处理"
 
         @JvmField
         val COLOR_ISSUE = Issue.create(
@@ -42,7 +43,7 @@ class ParseDetector : Detector(), Detector.UastScanner {
             return
         }
 
-        if (context.evaluator.isMemberInClass(method, "android.graphics.Color")) {
+        if (context.evaluator.isMemberInClass(method, ANDROID_COLOR)) {
             val fix = LintFix.create()
                 .name("add try catch")
                 .replace()

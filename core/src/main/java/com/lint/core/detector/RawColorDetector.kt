@@ -19,7 +19,7 @@ class RawColorDetector : ResourceXmlDetector() {
 
     companion object {
 
-        const val MESSAGE = "颜色值应全部定义为颜色资源。这有一个好处，即您可以在一个文件中轻松查看所有颜色。例如:一个好处是更容易添加深色主题。"
+        private const val MESSAGE = "颜色值应全部定义为颜色资源。这有一个好处，即您可以在一个文件中轻松查看所有颜色。例如:一个好处是更容易添加深色主题。"
 
         @JvmField
         val ISSUE = Issue.create(

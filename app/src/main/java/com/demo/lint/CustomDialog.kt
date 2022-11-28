@@ -1,8 +1,10 @@
 package com.demo.lint
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import com.lxj.xpopup.core.BasePopupView
 
 /**
@@ -13,7 +15,8 @@ import com.lxj.xpopup.core.BasePopupView
 class CustomDialog(context: Context) : Dialog(context) {
 
     init {
-
+        context.startActivity(Intent())
+        (context as Activity).startActivity(Intent())
     }
 
     private fun alertDialog(dialog:AlertDialog){

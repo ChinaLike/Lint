@@ -21,6 +21,9 @@ class LintRegistry : IssueRegistry() {
         LogDetector.ISSUE,
         ToastDetector.ISSUE,
         ActivityDetector.ISSUE,
+        AndroidDetector.ISSUE_RESOURCES_GET_DRAWABLE,
+        AndroidDetector.ISSUE_RESOURCES_GET_COLOR,
+        AndroidDetector.ISSUE_RESOURCES_GET_COLOR_STATE_LIST,
         FragmentDetector.ISSUE,
         AdapterDetector.ISSUE,
         ThreadDetector.ISSUE,
@@ -40,9 +43,9 @@ class LintRegistry : IssueRegistry() {
         ColorCasingDetector.ISSUE,
         OnClickListenerDetector.ISSUE,
         RawColorDetector.ISSUE,
-        RawDimenDetector.ISSUE
-//        XmlSpacingDetector.ISSUE
-//        SerializableClassDetector.ISSUE
+        RawDimenDetector.ISSUE,
+        SerializableClassDetector.ISSUE,
+        IntentDetector.ISSUE
     )
 
     override val api: Int

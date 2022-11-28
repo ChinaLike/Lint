@@ -2,6 +2,8 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiAnonymousClass
+import com.lint.core.Constants.ANDROID_FRAGMENT
+import com.lint.core.Constants.PROJECT_FRAGMENT
 import org.jetbrains.uast.UClass
 
 /**
@@ -11,16 +13,9 @@ import org.jetbrains.uast.UClass
  */
 class FragmentDetector : Detector(), SourceCodeScanner {
 
-    private val fragmentClass = "androidx.fragment.app.Fragment"
-
     companion object {
 
-        /**
-         * 需要继承的类
-         */
-        private const val superClass = "com.tsy.base.fragment.BaseFragment"
-
-        const val MESSAGE = "Fragment应继承自【${superClass}】或其子类"
+        private const val MESSAGE = "Fragment应继承自【${PROJECT_FRAGMENT}】或其子类"
 
         @JvmField
         val ISSUE = Issue.create(
@@ -35,7 +30,7 @@ class FragmentDetector : Detector(), SourceCodeScanner {
     }
 
     override fun applicableSuperClasses(): List<String>? {
-        return listOf(fragmentClass)
+        return listOf(ANDROID_FRAGMENT)
     }
 
     override fun visitClass(context: JavaContext, declaration: UClass) {
@@ -48,7 +43,7 @@ class FragmentDetector : Detector(), SourceCodeScanner {
             return
         }
         //判断是否继承指定类
-        if (!evaluator.extendsClass(declaration.javaPsi, superClass, true)) {
+        if (!evaluator.extendsClass(declaration.javaPsi, PROJECT_FRAGMENT, true)) {
             context.report(ISSUE, declaration, context.getNameLocation(declaration), MESSAGE)
         }
     }

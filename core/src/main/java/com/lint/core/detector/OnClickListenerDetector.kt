@@ -2,6 +2,7 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
+import com.lint.core.Constants.ANDROID_VIEW
 import org.jetbrains.uast.UCallExpression
 
 /**
@@ -13,7 +14,7 @@ class OnClickListenerDetector : Detector(), Detector.UastScanner {
 
     companion object {
 
-        const val MESSAGE = "请使用onDebouncedClick替换setOnClickListener，可以有效防重点击"
+        private const val MESSAGE = "请使用onDebouncedClick替换setOnClickListener，可以有效防重点击"
 
         @JvmField
         val ISSUE = Issue.create(
@@ -32,16 +33,16 @@ class OnClickListenerDetector : Detector(), Detector.UastScanner {
     }
 
     override fun visitMethodCall(context: JavaContext, node: UCallExpression, method: PsiMethod) {
-        val isMemberInClass = context.evaluator.isMemberInClass(method, "android.view.View")
+        val isMemberInClass = context.evaluator.isMemberInClass(method, ANDROID_VIEW)
         val isMemberInSubClassOf =
-            context.evaluator.isMemberInSubClassOf(method, "android.view.View", true)
+            context.evaluator.isMemberInSubClassOf(method, ANDROID_VIEW, true)
         if (isMemberInClass || isMemberInSubClassOf) {
             context.report(
                 ISSUE,
                 node,
                 context.getNameLocation(node),
                 MESSAGE,
-                fix().name("replace onDebouncedClick").replace().with("onDebouncedClick").build()
+                fix().name("Use onDebouncedClick instead").replace().with("onDebouncedClick").build()
             )
         }
     }

@@ -1,6 +1,7 @@
 package com.demo.lint
 
 import android.Manifest
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("", "")
+        Log.d("1", "2")
 
 
         Toast.makeText(this, "", Toast.LENGTH_LONG).show()
@@ -46,6 +48,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         }
 
+        resources.getDrawable(R.drawable.ic_launcher_background)
+
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
     }
 
     //测试单行注释，是不是这样!

@@ -17,7 +17,7 @@ class ColorCasingDetector : ResourceXmlDetector() {
 
         private val COLOR_REGEX = Regex("#[a-fA-F\\d]{3,8}")
 
-        const val MESSAGE = "颜色值应为大写字母，例如:#FF0099有效，而#ff0099无效，因为ff应该大写"
+        private const val MESSAGE = "颜色值应为大写字母，例如:#FF0099有效，而#ff0099无效，因为ff应该大写"
 
         @JvmField
         val ISSUE = Issue.create(

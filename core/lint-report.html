@@ -180,7 +180,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 29 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sat Nov 26 18:19:37 CST 2022      </nav>
+Check performed at Mon Nov 28 10:24:09 CST 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -355,28 +355,18 @@ Dismiss</button>            </div>
 <span class="lineno"> 55 </span>    }
 <span class="lineno"> 56 </span>}</pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:270</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 267 </span>            }
-<span class="lineno"> 268 </span>            ANDROID_SHAPEABLE_IMAGE_VIEW -> {
-<span class="lineno"> 269 </span>                <span class="comment">//ShapeableImageView</span>
-<span class="caretline"><span class="lineno"> 270 </span>                <span class="warning">println(<span class="string">"测试"</span>+ CARD_VIEW.newName())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 271 </span>                context.report(
-<span class="lineno"> 272 </span>                    SHAPEABLE_IMAGE_ISSUE,
-<span class="lineno"> 273 </span>                    element,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:280</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 277 </span>            }
+<span class="lineno"> 278 </span>            CARD_VIEW.oldName(), CARD_VIEW.newName() -> {
+<span class="lineno"> 279 </span>                <span class="comment">//Card</span>
+<span class="caretline"><span class="lineno"> 280 </span>                <span class="warning">println(<span class="string">"测试"</span>+ CARD_VIEW.oldName())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 281 </span>                context.report(
+<span class="lineno"> 282 </span>                    CARD_ISSUE,
+<span class="lineno"> 283 </span>                    element,
 </pre>
 
 <button class="mdl-button mdl-js-button mdl-button--primary" id="LintImplTextFormatDivLink" onclick="reveal('LintImplTextFormatDiv');" />+ 17 More Occurrences...</button>
 <div id="LintImplTextFormatDiv" style="display: none">
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:281</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 278 </span>            }
-<span class="lineno"> 279 </span>            CARD_VIEW.oldName(), CARD_VIEW.newName() -> {
-<span class="lineno"> 280 </span>                <span class="comment">//Card</span>
-<span class="caretline"><span class="lineno"> 281 </span>                <span class="warning">println(<span class="string">"测试"</span>+ CARD_VIEW.oldName())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 282 </span>                context.report(
-<span class="lineno"> 283 </span>                    CARD_ISSUE,
-<span class="lineno"> 284 </span>                    element,
-</pre>
-
 <span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:29</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
 <span class="lineno"> 26 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
 <span class="lineno"> 27 </span>            <span class="string">"FragmentStandard"</span>,
@@ -529,6 +519,16 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 39 </span>            context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 40 </span>        }
 <span class="lineno"> 41 </span>    }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/XmlSpacingDetector.kt">src/main/java/com/lint/core/detector/XmlSpacingDetector.kt</a>:42</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 39 </span>   .filterNot { it.index == contents.size - <span class="number">1</span> }
+<span class="lineno"> 40 </span>   .toList()
+<span class="lineno"> 41 </span>   .forEach {
+<span class="caretline"><span class="lineno"> 42 </span>       <span class="warning">println(<span class="string">"空格测试"</span>+it.toString())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 43 </span>       <span class="keyword">val</span> location =
+<span class="lineno"> 44 </span>           Location.create(context.file, SourcePosition(it.index, <span class="number">0</span>, it.value.length))
+<span class="lineno"> 45 </span>       <span class="keyword">val</span> fix = fix()
 </pre>
 
 </div>

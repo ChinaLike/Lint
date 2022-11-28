@@ -2,6 +2,7 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
+import com.lint.core.Constants.ANDROID_LOG
 import org.jetbrains.uast.UCallExpression
 
 /**
@@ -14,7 +15,12 @@ class LogDetector : Detector(), Detector.UastScanner {
 
     companion object {
 
-        const val MESSAGE = "请使用【com.tsy.commonsdk.utils.log.Logger】替换【Log】"
+        /**
+         * 方法列表
+         */
+        private val methodList = listOf("v", "d", "i", "w", "e", "wtf")
+
+        private const val MESSAGE = "规范日志使用，建议使用项目工具类Logger"
 
         @JvmField
         val ISSUE = Issue.create(
@@ -29,21 +35,59 @@ class LogDetector : Detector(), Detector.UastScanner {
     }
 
     override fun getApplicableMethodNames(): List<String>? {
-        return listOf("v", "d", "i", "w", "e","wtf")
+        return methodList
     }
 
     override fun visitMethodCall(context: JavaContext, node: UCallExpression, method: PsiMethod) {
-        val isMemberInClass = context.evaluator.isMemberInClass(method, "android.util.Log")
-        val isMemberInSubClassOf =
-            context.evaluator.isMemberInSubClassOf(method, "android.util.Log", true)
-        if (isMemberInClass || isMemberInSubClassOf) {
-            context.report(
-                ISSUE,
-                node,
-                context.getLocation(node),
-                MESSAGE
-            )
+        val isMemberInClass = context.evaluator.isMemberInClass(method, ANDROID_LOG)
+        val isMemberInSubClassOf = context.evaluator.isMemberInSubClassOf(method, ANDROID_LOG, true)
+        val methodName = node.methodName
+        val params = node.valueArguments
+        methodList.forEach {
+            if (it == methodName && (isMemberInClass || isMemberInSubClassOf)) {
+                context.report(
+                    ISSUE,
+                    node,
+                    context.getLocation(node),
+                    MESSAGE,
+                    lintFix(
+                        context,
+                        methodName,
+                        params[0].asSourceString(),
+                        params[1].asSourceString()
+                    )
+                )
+            }
         }
+    }
+
+    private fun lintFix(
+        context: JavaContext,
+        methodName: String,
+        tag: String,
+        message: String
+    ): LintFix {
+        val list = context.uastFile?.imports
+        val statement = list?.get(list.size - 1)
+        val lastImport = statement?.asSourceString()
+
+        val importClass = fix()
+            .replace()
+            .text(lastImport)
+            .with("$lastImport\nimport com.tsy.commonsdk.utils.log.Logger")
+            .range(context.getLocation(statement))
+            .build()
+        val builder = fix()
+            .replace()
+            .with("Logger.${methodName}(${tag},${message})")
+            .build()
+
+        return fix()
+            .name("Logger替代")
+            .composite()
+            .add(builder)
+            .add(importClass)
+            .build()
     }
 
 }

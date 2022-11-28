@@ -35,7 +35,7 @@ class RawDimenDetector : ResourceXmlDetector() {
 
     companion object {
 
-        const val MESSAGE =
+        private const val MESSAGE =
             "dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
 
         @JvmField

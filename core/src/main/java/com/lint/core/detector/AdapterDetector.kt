@@ -1,7 +1,9 @@
 package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
-import com.intellij.psi.PsiAnonymousClass
+import com.lint.core.Constants.ANDROID_ADAPTER
+import com.lint.core.Constants.PROJECT_MULTI_ADAPTER
+import com.lint.core.Constants.PROJECT_SINGLE_ADAPTER
 import org.jetbrains.uast.UClass
 
 /**
@@ -11,22 +13,10 @@ import org.jetbrains.uast.UClass
  */
 class AdapterDetector : Detector(), SourceCodeScanner {
 
-    private val adapterClass = "androidx.recyclerview.widget.RecyclerView.Adapter"
-
 
     companion object {
 
-        /**
-         * 单布局需要继承的类
-         */
-        private const val superSingleClass = "com.tsy.base.adapter.BaseViewBindingAdapter"
-
-        /**
-         * 多布局需要继承的类
-         */
-        private const val superMultiClass = "com.chad.library.adapter.base.BaseProviderMultiAdapter"
-
-        const val MESSAGE = "Adapter应继承自【${superSingleClass}】或【${superMultiClass}】或其子类"
+        private const val MESSAGE = "Adapter应继承自【${PROJECT_SINGLE_ADAPTER}】或【${PROJECT_MULTI_ADAPTER}】或其子类"
 
         @JvmField
         val ISSUE = Issue.create(
@@ -41,14 +31,14 @@ class AdapterDetector : Detector(), SourceCodeScanner {
     }
 
     override fun applicableSuperClasses(): List<String>? {
-        return listOf(adapterClass)
+        return listOf(ANDROID_ADAPTER)
     }
 
     override fun visitClass(context: JavaContext, declaration: UClass) {
         val evaluator = context.evaluator
         //判断是否继承指定类
-        if (!evaluator.extendsClass(declaration.javaPsi, superSingleClass, true) ||
-            !evaluator.extendsClass(declaration.javaPsi, superMultiClass, true)
+        if (!evaluator.extendsClass(declaration.javaPsi, PROJECT_SINGLE_ADAPTER, true) ||
+            !evaluator.extendsClass(declaration.javaPsi, PROJECT_MULTI_ADAPTER, true)
         ) {
             context.report(ISSUE, declaration, context.getNameLocation(declaration), MESSAGE)
         }
