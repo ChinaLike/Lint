@@ -37,7 +37,7 @@ class AdapterDetector : Detector(), SourceCodeScanner {
     override fun visitClass(context: JavaContext, declaration: UClass) {
         val evaluator = context.evaluator
         //判断是否继承指定类
-        if (!evaluator.extendsClass(declaration.javaPsi, PROJECT_SINGLE_ADAPTER, true) ||
+        if (!evaluator.extendsClass(declaration.javaPsi, PROJECT_SINGLE_ADAPTER, true) &&
             !evaluator.extendsClass(declaration.javaPsi, PROJECT_MULTI_ADAPTER, true)
         ) {
             context.report(ISSUE, declaration, context.getNameLocation(declaration), MESSAGE)

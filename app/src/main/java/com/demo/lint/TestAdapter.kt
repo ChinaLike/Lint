@@ -2,13 +2,14 @@ package com.demo.lint
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.tsy.base.adapter.BaseViewBindingAdapter
 
 /**
  *
  * @author like
  * @date 2022/11/22 17:58
  */
-class TestAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TestAdapter:BaseViewBindingAdapter() {
     /**
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
      * an item.

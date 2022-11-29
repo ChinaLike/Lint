@@ -1,14 +1,18 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
-apply plugin: 'com.android.lint'
+//apply plugin: 'com.android.lint'
 
-lintOptions {
-    htmlReport true
-    htmlOutput file(rootDir.path + "/lint-report.html")
-    textReport true
-    absolutePaths false
-    ignoreTestSources true
-}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+//lintOptions {
+//    htmlReport true
+//    htmlOutput file(rootDir.path + "/lint-report.html")
+//    textReport true
+//    absolutePaths false
+//    ignoreTestSources true
+//}
 
 jar {
     manifest {
@@ -24,6 +28,3 @@ dependencies {
     testImplementation "com.android.tools.lint:lint:$lintVersion"
     testImplementation "com.android.tools.lint:lint-tests:$lintVersion"
 }
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8

@@ -34,13 +34,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //       ActivityCompat.shouldShowRequestPermissionRationale()
 
 
-        try {
-            Color.parseColor("#EEE")
-        } catch (e: IllegalArgumentException) {
-            e.printStackTrace()
-        }
+        Color.parseColor("#EEE")
 
-        View(this).setOnClickListener{
+
+        View(this).setOnClickListener {
 
         }
 
@@ -50,7 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         resources.getDrawable(R.drawable.ic_launcher_background)
 
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 
