@@ -10,8 +10,13 @@ import java.io.Serializable
 data class AData(
     val data: BData,
     val cData: CData,
-    val list:MutableList<BData>
+    val list:MutableList<BData>,
+    val listA:List<BData>
 ) : Serializable {
+
+    companion object{
+
+    }
 
     data class CData(
         val name: String

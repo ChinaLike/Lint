@@ -277,7 +277,6 @@ class CustomLayoutDetector : ResourceXmlDetector() {
             }
             CARD_VIEW.oldName(), CARD_VIEW.newName() -> {
                 //Card
-                println("测试"+ CARD_VIEW.oldName())
                 context.report(
                     CARD_ISSUE,
                     element,

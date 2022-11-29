@@ -7,4 +7,9 @@ package com.demo.lint
  */
 data class BData(
     val name:String
-)
+){
+
+    companion object{
+
+    }
+}

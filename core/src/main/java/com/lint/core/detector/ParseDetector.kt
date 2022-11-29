@@ -44,22 +44,11 @@ class ParseDetector : Detector(), Detector.UastScanner {
         }
 
         if (context.evaluator.isMemberInClass(method, ANDROID_COLOR)) {
-            val fix = LintFix.create()
-                .name("add try catch")
-                .replace()
-                .with(
-                    "try {\n" +
-                            "   Color.${node.methodName}(${node.valueArguments[0].asSourceString()})\n" +
-                            "} catch (e: IllegalArgumentException) {\n" +
-                            "    e.printStackTrace()\n" +
-                            "}"
-                )
-                .build()
             context.report(
                 COLOR_ISSUE, node,
                 context.getCallLocation(node, includeReceiver = true, includeArguments = true),
                 COLOR_MESSAGE,
-                fix
+                lintFix(context, node)
             )
         }
     }
@@ -79,6 +68,40 @@ class ParseDetector : Detector(), Detector.UastScanner {
             parent = parent.parent
         }
         return false
+    }
+
+    private fun lintFix(context: JavaContext, node: UCallExpression): LintFix {
+        val list = context.uastFile?.imports
+        val statement = list?.get(list.size - 1)
+        val lastImport = statement?.asSourceString()
+        val fix1 = LintFix.create()
+            .name("add try catch")
+            .replace()
+            .with(
+                "try {\n" +
+                        "   Color.${node.methodName}(${node.valueArguments[0].asSourceString()})\n" +
+                        "} catch (e: IllegalArgumentException) {\n" +
+                        "    e.printStackTrace()\n" +
+                        "}"
+            )
+            .build()
+        val importClass = fix()
+            .replace()
+            .text(lastImport)
+            .with("$lastImport\nimport com.core.util.ColorUtil")
+            .range(context.getLocation(statement))
+            .build()
+        val builder = fix()
+            .replace()
+            .with("ColorUtil.${node.methodName}(${node.valueArguments[0].asSourceString()})")
+            .build()
+        val fix2 = fix()
+            .name("replace ColorUtil.${node.methodName}(${node.valueArguments[0].asSourceString()})")
+            .composite()
+            .add(builder)
+            .add(importClass)
+            .build()
+        return fix().group(fix1, fix2)
     }
 
 }

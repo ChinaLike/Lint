@@ -14,4 +14,8 @@ class DData : Serializable {
     class EData {
 
     }
+
+    companion object{
+
+    }
 }
