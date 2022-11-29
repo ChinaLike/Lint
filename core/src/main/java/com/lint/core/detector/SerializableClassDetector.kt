@@ -35,6 +35,10 @@ class SerializableClassDetector : Detector(), Detector.UastScanner {
         for (field in declaration.fields) {
             //字段是引用类型，并且可以拿到该class
             val psiClass = (field.type as? PsiClassType)?.resolve() ?: continue
+            //判断是否是接口
+            if (psiClass.isInterface){
+                return
+            }
             if (!context.evaluator.implementsInterface(psiClass, ANDROID_SERIALIZABLE, true)) {
                 context.report(ISSUE, context.getLocation(field.typeReference!!), MESSAGE)
             }

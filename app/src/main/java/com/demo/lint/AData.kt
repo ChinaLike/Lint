@@ -9,7 +9,8 @@ import java.io.Serializable
  */
 data class AData(
     val data: BData,
-    val cData: CData
+    val cData: CData,
+    val list:MutableList<BData>
 ) : Serializable {
 
     data class CData(
