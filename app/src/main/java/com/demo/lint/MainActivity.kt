@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         Color.parseColor("#EEE")
+        Color.parseColor("#EEE")
 
 
         View(this).setOnClickListener {

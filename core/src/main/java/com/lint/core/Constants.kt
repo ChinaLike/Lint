@@ -137,4 +137,10 @@ object Constants {
     /**项目 Dialog*/
     const val PROJECT_DIALOG = "com.lxj.xpopup.core.BasePopupView"
 
+    /**项目 ColorUtil*/
+    const val PROJECT_COLOR_UTIL = "com.core.util.ColorUtil"
+
+    /**项目 ResourceUtil*/
+    const val PROJECT_RESOURCE_UTIL = "com.core.util.ResourceUtil"
+
 }

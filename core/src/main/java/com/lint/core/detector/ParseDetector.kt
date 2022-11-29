@@ -5,7 +5,9 @@ import com.intellij.psi.PsiMethod
 import com.intellij.psi.PsiTryStatement
 import com.intellij.psi.impl.source.tree.java.MethodElement
 import com.lint.core.Constants.ANDROID_COLOR
+import com.lint.core.Constants.PROJECT_COLOR_UTIL
 import org.jetbrains.uast.UCallExpression
+import org.jetbrains.uast.UImportStatement
 import org.jetbrains.uast.UTryExpression
 import org.jetbrains.uast.getParentOfType
 import org.jetbrains.uast.kotlin.KotlinUFile
@@ -71,9 +73,8 @@ class ParseDetector : Detector(), Detector.UastScanner {
     }
 
     private fun lintFix(context: JavaContext, node: UCallExpression): LintFix {
-        val list = context.uastFile?.imports
-        val statement = list?.get(list.size - 1)
-        val lastImport = statement?.asSourceString()
+        var importClass: LintFix? = context.importPackage(PROJECT_COLOR_UTIL)
+
         val fix1 = LintFix.create()
             .name("add try catch")
             .replace()
@@ -85,12 +86,7 @@ class ParseDetector : Detector(), Detector.UastScanner {
                         "}"
             )
             .build()
-        val importClass = fix()
-            .replace()
-            .text(lastImport)
-            .with("$lastImport\nimport com.core.util.ColorUtil")
-            .range(context.getLocation(statement))
-            .build()
+
         val builder = fix()
             .replace()
             .with("ColorUtil.${node.methodName}(${node.valueArguments[0].asSourceString()})")
@@ -98,8 +94,11 @@ class ParseDetector : Detector(), Detector.UastScanner {
         val fix2 = fix()
             .name("replace ColorUtil.${node.methodName}(${node.valueArguments[0].asSourceString()})")
             .composite()
-            .add(builder)
-            .add(importClass)
+            .add(builder).apply {
+                if (importClass != null) {
+                    add(importClass)
+                }
+            }
             .build()
         return fix().group(fix1, fix2)
     }

@@ -3,6 +3,7 @@ package com.lint.core.detector
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
 import com.lint.core.Constants.ANDROID_RESOURCES
+import com.lint.core.Constants.PROJECT_RESOURCE_UTIL
 import org.jetbrains.uast.UCallExpression
 
 /**
@@ -92,21 +93,12 @@ class AndroidDetector : Detector(), Detector.UastScanner {
     }
 
     private fun lintFix(context: JavaContext, methodName: String, params: String): LintFix {
-        val list = context.uastFile?.imports
-        val statement = list?.get(list.size - 1)
-        val lastImport = statement?.asSourceString()
-
         val fix1 = fix()
             .name("ContextCompat替代")
             .replace()
             .with("ContextCompat.${methodName}(context, ${params})")
             .build()
-        val importClass = fix()
-            .replace()
-            .text(lastImport)
-            .with("$lastImport\nimport com.core.util.ResourceUtil")
-            .range(context.getLocation(statement))
-            .build()
+        val importClass = context.importPackage(PROJECT_RESOURCE_UTIL)
         val builder = fix()
             .replace()
             .with("ResourceUtil.${methodName}(${params})")
@@ -114,8 +106,11 @@ class AndroidDetector : Detector(), Detector.UastScanner {
         val fix2 = fix()
             .name("ResourceUtil替代")
             .composite()
-            .add(builder)
-            .add(importClass)
+            .add(builder).apply {
+                if (importClass != null){
+                    add(importClass)
+                }
+            }
             .build()
 
         return fix().group(fix1, fix2)
