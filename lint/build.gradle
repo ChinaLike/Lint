@@ -6,7 +6,7 @@ plugins {
 
 //组名 com.github是固定的,后面的ChinaLike是我Github的用户名,替换成你自己的就可以了
 group='com.github.ChinaLike'
-version = "0.0.9"
+version = "0.1.0"
 
 android {
     compileSdk 32
@@ -38,7 +38,7 @@ android {
 
 dependencies {
 
-    implementation project(':core')
+//    implementation project(':core')
     lintPublish project(':core')
 
 }
@@ -51,7 +51,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.ChinaLike'
                 artifactId = 'Lint'
-                version = '0.0.9'
+                version = '0.1.0'
             }
         }
     }

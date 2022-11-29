@@ -4,7 +4,7 @@ apply plugin: 'com.android.lint'
 
 lintOptions {
     htmlReport true
-    htmlOutput file("lint-report.html")
+    htmlOutput file(rootDir.path + "/lint-report.html")
     textReport true
     absolutePaths false
     ignoreTestSources true

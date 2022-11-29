@@ -177,10 +177,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 29 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 32 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Nov 28 10:24:09 CST 2022      </nav>
+Check performed at Mon Nov 28 17:55:58 CST 2022      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -188,7 +188,7 @@ Check performed at Mon Nov 28 10:24:09 CST 2022      </nav>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (5)</a>
-      <a class="mdl-navigation__link" href="#LintImplTextFormat"><i class="material-icons warning-icon">warning</i>Lint Text Format (22)</a>
+      <a class="mdl-navigation__link" href="#LintImplTextFormat"><i class="material-icons warning-icon">warning</i>Lint Text Format (25)</a>
       <a class="mdl-navigation__link" href="#UastImplementation"><i class="material-icons warning-icon">warning</i>Avoid using UAST implementation (2)</a>
     </nav>
   </div>
@@ -210,7 +210,7 @@ Check performed at Mon Nov 28 10:24:09 CST 2022      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Lint Implementation Issues">Lint Implementation Issues</a>
 </td></tr>
 <tr>
-<td class="countColumn">22</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">25</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#LintImplTextFormat">LintImplTextFormat</a>: Lint Text Format</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -317,43 +317,105 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ActivityDetector.kt">src/main/java/com/lint/core/detector/ActivityDetector.kt</a>:29</span>: <span class="message">"BaseActivity" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseActivity`</span><br /><pre class="errorlines">
-<span class="lineno"> 26 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 27 </span>            <span class="string">"ActivityStandard"</span>,
-<span class="lineno"> 28 </span>            <span class="string">"Activity继承不规范"</span>,
-<span class="caretline"><span class="lineno"> 29 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 30 </span>            Category.MESSAGES,
-<span class="lineno"> 31 </span>            <span class="number">7</span>,
-<span class="lineno"> 32 </span>            Severity.FATAL,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ActivityDetector.kt">src/main/java/com/lint/core/detector/ActivityDetector.kt</a>:24</span>: <span class="message">"BaseActivity" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseActivity`</span><br /><pre class="errorlines">
+<span class="lineno"> 21 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 22 </span>            <span class="string">"ActivityStandard"</span>,
+<span class="lineno"> 23 </span>            <span class="string">"Activity继承不规范"</span>,
+<span class="caretline"><span class="lineno"> 24 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 25 </span>            Category.MESSAGES,
+<span class="lineno"> 26 </span>            <span class="number">7</span>,
+<span class="lineno"> 27 </span>            Severity.FATAL,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ActivityDetector.kt">src/main/java/com/lint/core/detector/ActivityDetector.kt</a>:52</span>: <span class="message">"BaseActivity" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseActivity`</span><br /><pre class="errorlines">
-<span class="lineno"> 49 </span>        }
-<span class="lineno"> 50 </span>        <span class="comment">//判断是否继承指定类</span>
-<span class="lineno"> 51 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, superClass, <span class="keyword">true</span>)) {
-<span class="caretline"><span class="lineno"> 52 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 53 </span>        }
-<span class="lineno"> 54 </span>    }
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ActivityDetector.kt">src/main/java/com/lint/core/detector/ActivityDetector.kt</a>:47</span>: <span class="message">"BaseActivity" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseActivity`</span><br /><pre class="errorlines">
+<span class="lineno"> 44 </span>        }
+<span class="lineno"> 45 </span>        <span class="comment">//判断是否继承指定类</span>
+<span class="lineno"> 46 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, PROJECT_ACTIVITY, <span class="keyword">true</span>)) {
+<span class="caretline"><span class="lineno"> 47 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 48 </span>        }
+<span class="lineno"> 49 </span>    }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/AdapterDetector.kt">src/main/java/com/lint/core/detector/AdapterDetector.kt</a>:35</span>: <span class="message">"BaseViewBindingAdapter" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseViewBindingAdapter`</span><br /><pre class="errorlines">
-<span class="lineno"> 32 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 33 </span>            <span class="string">"AdapterStandard"</span>,
-<span class="lineno"> 34 </span>            <span class="string">"Adapter继承不规范"</span>,
-<span class="caretline"><span class="lineno"> 35 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 36 </span>            Category.MESSAGES,
-<span class="lineno"> 37 </span>            <span class="number">7</span>,
-<span class="lineno"> 38 </span>            Severity.FATAL,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AdapterDetector.kt">src/main/java/com/lint/core/detector/AdapterDetector.kt</a>:25</span>: <span class="message">"BaseViewBindingAdapter" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseViewBindingAdapter`</span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 23 </span>            <span class="string">"AdapterStandard"</span>,
+<span class="lineno"> 24 </span>            <span class="string">"Adapter继承不规范"</span>,
+<span class="caretline"><span class="lineno"> 25 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 26 </span>            Category.MESSAGES,
+<span class="lineno"> 27 </span>            <span class="number">7</span>,
+<span class="lineno"> 28 </span>            Severity.FATAL,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/AdapterDetector.kt">src/main/java/com/lint/core/detector/AdapterDetector.kt</a>:53</span>: <span class="message">"BaseViewBindingAdapter" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseViewBindingAdapter`</span><br /><pre class="errorlines">
-<span class="lineno"> 50 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, superSingleClass, <span class="keyword">true</span>) ||
-<span class="lineno"> 51 </span>            !evaluator.extendsClass(declaration.javaPsi, superMultiClass, <span class="keyword">true</span>)
-<span class="lineno"> 52 </span>        ) {
-<span class="caretline"><span class="lineno"> 53 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 54 </span>        }
-<span class="lineno"> 55 </span>    }
-<span class="lineno"> 56 </span>}</pre>
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AdapterDetector.kt">src/main/java/com/lint/core/detector/AdapterDetector.kt</a>:43</span>: <span class="message">"BaseViewBindingAdapter" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseViewBindingAdapter`</span><br /><pre class="errorlines">
+<span class="lineno"> 40 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, PROJECT_SINGLE_ADAPTER, <span class="keyword">true</span>) ||
+<span class="lineno"> 41 </span>            !evaluator.extendsClass(declaration.javaPsi, PROJECT_MULTI_ADAPTER, <span class="keyword">true</span>)
+<span class="lineno"> 42 </span>        ) {
+<span class="caretline"><span class="lineno"> 43 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 44 </span>        }
+<span class="lineno"> 45 </span>    }
+<span class="lineno"> 46 </span>}</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:28</span>: <span class="message">"getDrawable()" looks like a call; surround with backtics in string to display as symbol, e.g. `getDrawable()`</span><br /><pre class="errorlines">
+<span class="lineno">  25 </span>        <span class="keyword">val</span> ISSUE_RESOURCES_GET_DRAWABLE = Issue.create(
+<span class="lineno">  26 </span>            <span class="string">"ResourcesGetDrawableStandard"</span>,
+<span class="lineno">  27 </span>            <span class="string">"Resources 已经弃用getDrawable()"</span>,
+<span class="caretline"><span class="lineno">  28 </span>            <span class="warning">MESSAGE_RESOURCES_GET_DRAWABLE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  29 </span>            Category.MESSAGES, <span class="number">7</span>, Severity.FATAL,
+<span class="lineno">  30 </span>            Implementation(AndroidDetector::<span class="keyword">class</span>.java, Scope.JAVA_FILE_SCOPE),
+<span class="lineno">  31 </span>        )
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="LintImplTextFormatDivLink" onclick="reveal('LintImplTextFormatDiv');" />+ 20 More Occurrences...</button>
+<div id="LintImplTextFormatDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:37</span>: <span class="message">"getColor()" looks like a call; surround with backtics in string to display as symbol, e.g. `getColor()`</span><br /><pre class="errorlines">
+<span class="lineno">  34 </span>        <span class="keyword">val</span> ISSUE_RESOURCES_GET_COLOR = Issue.create(
+<span class="lineno">  35 </span>            <span class="string">"ResourcesGetColorStandard"</span>,
+<span class="lineno">  36 </span>            <span class="string">"Resources 已经弃用getColor()"</span>,
+<span class="caretline"><span class="lineno">  37 </span>            <span class="warning">MESSAGE_RESOURCES_GET_COLOR</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  38 </span>            Category.MESSAGES, <span class="number">7</span>, Severity.FATAL,
+<span class="lineno">  39 </span>            Implementation(AndroidDetector::<span class="keyword">class</span>.java, Scope.JAVA_FILE_SCOPE),
+<span class="lineno">  40 </span>        )
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:46</span>: <span class="message">"getColorStateList()" looks like a call; surround with backtics in string to display as symbol, e.g. `getColorStateList()`</span><br /><pre class="errorlines">
+<span class="lineno">  43 </span>        <span class="keyword">val</span> ISSUE_RESOURCES_GET_COLOR_STATE_LIST = Issue.create(
+<span class="lineno">  44 </span>            <span class="string">"ResourcesGetColorStateListStandard"</span>,
+<span class="lineno">  45 </span>            <span class="string">"Resources 已经弃用getColorStateList()"</span>,
+<span class="caretline"><span class="lineno">  46 </span>            <span class="warning">MESSAGE_RESOURCES_GET_COLOR_STATE_LIST</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  47 </span>            Category.MESSAGES,
+<span class="lineno">  48 </span>            <span class="number">7</span>,
+<span class="lineno">  49 </span>            Severity.FATAL,
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:68</span>: <span class="message">"getDrawable()" looks like a call; surround with backtics in string to display as symbol, e.g. `getDrawable()`</span><br /><pre class="errorlines">
+<span class="lineno">  65 </span>                ISSUE_RESOURCES_GET_DRAWABLE,
+<span class="lineno">  66 </span>                node,
+<span class="lineno">  67 </span>                context.getLocation(node),
+<span class="caretline"><span class="lineno">  68 </span>                <span class="warning">MESSAGE_RESOURCES_GET_DRAWABLE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  69 </span>                lintFix(context, <span class="string">"getDrawable"</span>, node.valueArguments[<span class="number">0</span>].asSourceString())
+<span class="lineno">  70 </span>            )
+<span class="lineno">  71 </span>        }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:78</span>: <span class="message">"getColor()" looks like a call; surround with backtics in string to display as symbol, e.g. `getColor()`</span><br /><pre class="errorlines">
+<span class="lineno">  75 </span>                ISSUE_RESOURCES_GET_COLOR,
+<span class="lineno">  76 </span>                node,
+<span class="lineno">  77 </span>                context.getNameLocation(node),
+<span class="caretline"><span class="lineno">  78 </span>                <span class="warning">MESSAGE_RESOURCES_GET_COLOR</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  79 </span>                lintFix(context, <span class="string">"getColor"</span>, node.valueArguments[<span class="number">0</span>].asSourceString())
+<span class="lineno">  80 </span>            )
+<span class="lineno">  81 </span>        }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/AndroidDetector.kt">src/main/java/com/lint/core/detector/AndroidDetector.kt</a>:88</span>: <span class="message">"getColorStateList()" looks like a call; surround with backtics in string to display as symbol, e.g. `getColorStateList()`</span><br /><pre class="errorlines">
+<span class="lineno">  85 </span>            ISSUE_RESOURCES_GET_COLOR_STATE_LIST,
+<span class="lineno">  86 </span>            node,
+<span class="lineno">  87 </span>            context.getNameLocation(node),
+<span class="caretline"><span class="lineno">  88 </span>            <span class="warning">MESSAGE_RESOURCES_GET_COLOR_STATE_LIST</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  89 </span>            lintFix(context, <span class="string">"getColorStateList"</span>, node.valueArguments[<span class="number">0</span>].asSourceString())
+<span class="lineno">  90 </span>        )
+<span class="lineno">  91 </span>    }
+</pre>
 
 <span class="location"><a href="../../src/main/java/com/lint/core/detector/CustomLayoutDetector.kt">src/main/java/com/lint/core/detector/CustomLayoutDetector.kt</a>:280</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
 <span class="lineno"> 277 </span>            }
@@ -365,170 +427,139 @@ Dismiss</button>            </div>
 <span class="lineno"> 283 </span>                    element,
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="LintImplTextFormatDivLink" onclick="reveal('LintImplTextFormatDiv');" />+ 17 More Occurrences...</button>
-<div id="LintImplTextFormatDiv" style="display: none">
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:29</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
-<span class="lineno"> 26 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 27 </span>            <span class="string">"FragmentStandard"</span>,
-<span class="lineno"> 28 </span>            <span class="string">"Fragment继承不规范"</span>,
-<span class="caretline"><span class="lineno"> 29 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:24</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
+<span class="lineno"> 21 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 22 </span>            <span class="string">"FragmentStandard"</span>,
+<span class="lineno"> 23 </span>            <span class="string">"Fragment继承不规范"</span>,
+<span class="caretline"><span class="lineno"> 24 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 25 </span>            Category.MESSAGES,
+<span class="lineno"> 26 </span>            <span class="number">7</span>,
+<span class="lineno"> 27 </span>            Severity.FATAL,
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:47</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
+<span class="lineno"> 44 </span>        }
+<span class="lineno"> 45 </span>        <span class="comment">//判断是否继承指定类</span>
+<span class="lineno"> 46 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, PROJECT_FRAGMENT, <span class="keyword">true</span>)) {
+<span class="caretline"><span class="lineno"> 47 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 48 </span>        }
+<span class="lineno"> 49 </span>    }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:17</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
+<span class="lineno"> 14 </span>
+<span class="lineno"> 15 </span>    companion <span class="keyword">object</span> {
+<span class="lineno"> 16 </span>
+<span class="caretline"><span class="lineno"> 17 </span>        private const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 18 </span>
+<span class="lineno"> 19 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:17</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
+<span class="lineno"> 14 </span>
+<span class="lineno"> 15 </span>    companion <span class="keyword">object</span> {
+<span class="lineno"> 16 </span>
+<span class="caretline"><span class="lineno"> 17 </span>        private const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 18 </span>
+<span class="lineno"> 19 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:22</span>: <span class="message">The issue summary should be capitalized</span><br /><pre class="errorlines">
+<span class="lineno"> 19 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 21 </span>            <span class="string">"ClickStandard"</span>,
+<span class="caretline"><span class="lineno"> 22 </span>            <span class="string">"</span><span class="warning"><span class="string">setOnClickListener不能防重点击，建议替换</span></span><span class="string">"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 23 </span>            MESSAGE,
+<span class="lineno"> 24 </span>            Category.MESSAGES,
+<span class="lineno"> 25 </span>            <span class="number">7</span>,
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:28</span>: <span class="message">"parseColor" looks like a code reference; surround with backtics in string to display as symbol, e.g. `parseColor`</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 26 </span>        <span class="keyword">val</span> COLOR_ISSUE = Issue.create(
+<span class="lineno"> 27 </span>            <span class="string">"ColorStandard"</span>,
+<span class="caretline"><span class="lineno"> 28 </span>            <span class="string">"</span><span class="warning"><span class="string">parseColor</span></span><span class="string">使用不规范"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>            COLOR_MESSAGE,
 <span class="lineno"> 30 </span>            Category.MESSAGES,
-<span class="lineno"> 31 </span>            <span class="number">7</span>,
-<span class="lineno"> 32 </span>            Severity.FATAL,
+<span class="lineno"> 31 </span>            <span class="number">8</span>,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/FragmentDetector.kt">src/main/java/com/lint/core/detector/FragmentDetector.kt</a>:52</span>: <span class="message">"BaseFragment" looks like a code reference; surround with backtics in string to display as symbol, e.g. `BaseFragment`</span><br /><pre class="errorlines">
-<span class="lineno"> 49 </span>        }
-<span class="lineno"> 50 </span>        <span class="comment">//判断是否继承指定类</span>
-<span class="lineno"> 51 </span>        <span class="keyword">if</span> (!evaluator.extendsClass(declaration.javaPsi, superClass, <span class="keyword">true</span>)) {
-<span class="caretline"><span class="lineno"> 52 </span>            context.report(ISSUE, declaration, context.getNameLocation(declaration), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 53 </span>        }
-<span class="lineno"> 54 </span>    }
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:28</span>: <span class="message">The issue summary should be capitalized</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>        <span class="annotation">@JvmField</span>
+<span class="lineno"> 26 </span>        <span class="keyword">val</span> COLOR_ISSUE = Issue.create(
+<span class="lineno"> 27 </span>            <span class="string">"ColorStandard"</span>,
+<span class="caretline"><span class="lineno"> 28 </span>            <span class="string">"</span><span class="warning"><span class="string">parseColor使用不规范</span></span><span class="string">"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>            COLOR_MESSAGE,
+<span class="lineno"> 30 </span>            Category.MESSAGES,
+<span class="lineno"> 31 </span>            <span class="number">8</span>,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:16</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
-<span class="lineno"> 13 </span>
-<span class="lineno"> 14 </span>    companion <span class="keyword">object</span> {
-<span class="lineno"> 15 </span>
-<span class="caretline"><span class="lineno"> 16 </span>        const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 17 </span>
-<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:61</span>: <span class="message">"parseColor" looks like a code reference; surround with backtics in string to display as symbol, e.g. `parseColor`</span><br /><pre class="errorlines">
+<span class="lineno"> 58 </span>       context.report(
+<span class="lineno"> 59 </span>           COLOR_ISSUE, node,
+<span class="lineno"> 60 </span>           context.getCallLocation(node, includeReceiver = <span class="keyword">true</span>, includeArguments = <span class="keyword">true</span>),
+<span class="caretline"><span class="lineno"> 61 </span>           <span class="warning">COLOR_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 62 </span>           fix
+<span class="lineno"> 63 </span>       )
+<span class="lineno"> 64 </span>   }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:16</span>: <span class="message">"onDebouncedClick" looks like a code reference; surround with backtics in string to display as symbol, e.g. `onDebouncedClick`</span><br /><pre class="errorlines">
-<span class="lineno"> 13 </span>
-<span class="lineno"> 14 </span>    companion <span class="keyword">object</span> {
-<span class="lineno"> 15 </span>
-<span class="caretline"><span class="lineno"> 16 </span>        const <span class="keyword">val</span> MESSAGE = <span class="string">"请使用</span><span class="warning"><span class="string">onDebouncedClick</span></span><span class="string">替换setOnClickListener，可以有效防重点击"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 17 </span>
-<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/PermissionDetector.kt">src/main/java/com/lint/core/detector/PermissionDetector.kt</a>:24</span>: <span class="message">"PermissionHelper" looks like a code reference; surround with backtics in string to display as symbol, e.g. `PermissionHelper`</span><br /><pre class="errorlines">
+<span class="lineno"> 21 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 22 </span>            <span class="string">"PermissionStandard"</span>,
+<span class="lineno"> 23 </span>            <span class="string">"Permission使用不规范"</span>,
+<span class="caretline"><span class="lineno"> 24 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 25 </span>            Category.MESSAGES,
+<span class="lineno"> 26 </span>            <span class="number">7</span>,
+<span class="lineno"> 27 </span>            Severity.FATAL,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/OnClickListenerDetector.kt">src/main/java/com/lint/core/detector/OnClickListenerDetector.kt</a>:21</span>: <span class="message">The issue summary should be capitalized</span><br /><pre class="errorlines">
-<span class="lineno"> 18 </span>        <span class="annotation">@JvmField</span>
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 20 </span>            <span class="string">"ClickStandard"</span>,
-<span class="caretline"><span class="lineno"> 21 </span>            <span class="string">"</span><span class="warning"><span class="string">setOnClickListener不能防重点击，建议替换</span></span><span class="string">"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 22 </span>            MESSAGE,
-<span class="lineno"> 23 </span>            Category.MESSAGES,
-<span class="lineno"> 24 </span>            <span class="number">7</span>,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/PermissionDetector.kt">src/main/java/com/lint/core/detector/PermissionDetector.kt</a>:48</span>: <span class="message">"PermissionHelper" looks like a code reference; surround with backtics in string to display as symbol, e.g. `PermissionHelper`</span><br /><pre class="errorlines">
+<span class="lineno"> 45 </span>          context.evaluator.isMemberInSubClassOf(method, ANDROID_CONTEXT_COMPAT, <span class="keyword">true</span>) ||
+<span class="lineno"> 46 </span>                  context.evaluator.isMemberInSubClassOf(method, ANDROID_ACTIVITY_COMPAT, <span class="keyword">true</span>)
+<span class="lineno"> 47 </span>      <span class="keyword">if</span> (isMemberInClass || isMemberInSubClassOf) {
+<span class="caretline"><span class="lineno"> 48 </span>          context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 49 </span>      }
+<span class="lineno"> 50 </span>  }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:27</span>: <span class="message">"parseColor" looks like a code reference; surround with backtics in string to display as symbol, e.g. `parseColor`</span><br /><pre class="errorlines">
-<span class="lineno"> 24 </span>        <span class="annotation">@JvmField</span>
-<span class="lineno"> 25 </span>        <span class="keyword">val</span> COLOR_ISSUE = Issue.create(
-<span class="lineno"> 26 </span>            <span class="string">"ColorStandard"</span>,
-<span class="caretline"><span class="lineno"> 27 </span>            <span class="string">"</span><span class="warning"><span class="string">parseColor</span></span><span class="string">使用不规范"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 28 </span>            COLOR_MESSAGE,
-<span class="lineno"> 29 </span>            Category.MESSAGES,
-<span class="lineno"> 30 </span>            <span class="number">8</span>,
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ThreadDetector.kt">src/main/java/com/lint/core/detector/ThreadDetector.kt</a>:23</span>: <span class="message">"Thread()" looks like a call; surround with backtics in string to display as symbol, e.g. `Thread()`</span><br /><pre class="errorlines">
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 21 </span>            <span class="string">"ThreadStandard"</span>,
+<span class="lineno"> 22 </span>            <span class="string">"Thread使用不规范"</span>,
+<span class="caretline"><span class="lineno"> 23 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 24 </span>            Category.MESSAGES,
+<span class="lineno"> 25 </span>            <span class="number">7</span>,
+<span class="lineno"> 26 </span>            Severity.FATAL,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:27</span>: <span class="message">The issue summary should be capitalized</span><br /><pre class="errorlines">
-<span class="lineno"> 24 </span>        <span class="annotation">@JvmField</span>
-<span class="lineno"> 25 </span>        <span class="keyword">val</span> COLOR_ISSUE = Issue.create(
-<span class="lineno"> 26 </span>            <span class="string">"ColorStandard"</span>,
-<span class="caretline"><span class="lineno"> 27 </span>            <span class="string">"</span><span class="warning"><span class="string">parseColor使用不规范</span></span><span class="string">"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 28 </span>            COLOR_MESSAGE,
-<span class="lineno"> 29 </span>            Category.MESSAGES,
-<span class="lineno"> 30 </span>            <span class="number">8</span>,
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:60</span>: <span class="message">"parseColor" looks like a code reference; surround with backtics in string to display as symbol, e.g. `parseColor`</span><br /><pre class="errorlines">
-<span class="lineno"> 57 </span>       context.report(
-<span class="lineno"> 58 </span>           COLOR_ISSUE, node,
-<span class="lineno"> 59 </span>           context.getCallLocation(node, includeReceiver = <span class="keyword">true</span>, includeArguments = <span class="keyword">true</span>),
-<span class="caretline"><span class="lineno"> 60 </span>           <span class="warning">COLOR_MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 61 </span>           fix
-<span class="lineno"> 62 </span>       )
-<span class="lineno"> 63 </span>   }
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/PermissionDetector.kt">src/main/java/com/lint/core/detector/PermissionDetector.kt</a>:25</span>: <span class="message">"PermissionHelper" looks like a code reference; surround with backtics in string to display as symbol, e.g. `PermissionHelper`</span><br /><pre class="errorlines">
-<span class="lineno"> 22 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 23 </span>            <span class="string">"PermissionStandard"</span>,
-<span class="lineno"> 24 </span>            <span class="string">"Permission使用不规范"</span>,
-<span class="caretline"><span class="lineno"> 25 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 26 </span>            Category.MESSAGES,
-<span class="lineno"> 27 </span>            <span class="number">7</span>,
-<span class="lineno"> 28 </span>            Severity.FATAL,
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/PermissionDetector.kt">src/main/java/com/lint/core/detector/PermissionDetector.kt</a>:49</span>: <span class="message">"PermissionHelper" looks like a code reference; surround with backtics in string to display as symbol, e.g. `PermissionHelper`</span><br /><pre class="errorlines">
-<span class="lineno"> 46 </span>            context.evaluator.isMemberInSubClassOf(method, contextCompatClass, <span class="keyword">true</span>) ||
-<span class="lineno"> 47 </span>                    context.evaluator.isMemberInSubClassOf(method, activityCompatClass, <span class="keyword">true</span>)
-<span class="lineno"> 48 </span>        <span class="keyword">if</span> (isMemberInClass || isMemberInSubClassOf) {
-<span class="caretline"><span class="lineno"> 49 </span>            context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 50 </span>        }
-<span class="lineno"> 51 </span>    }
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/StringDetector.kt">src/main/java/com/lint/core/detector/StringDetector.kt</a>:22</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 20 </span>            <span class="string">"ToastStandard"</span>,
-<span class="lineno"> 21 </span>            <span class="string">"Toast使用不规范"</span>,
-<span class="caretline"><span class="lineno"> 22 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 23 </span>            Category.MESSAGES,
-<span class="lineno"> 24 </span>            <span class="number">7</span>,
-<span class="lineno"> 25 </span>            Severity.FATAL,
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/StringDetector.kt">src/main/java/com/lint/core/detector/StringDetector.kt</a>:39</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
-<span class="lineno"> 36 </span>        <span class="keyword">val</span> isMemberInSubClassOf =
-<span class="lineno"> 37 </span>            context.evaluator.isMemberInSubClassOf(method, <span class="string">"android.widget.Toast"</span>, <span class="keyword">true</span>)
-<span class="lineno"> 38 </span>        <span class="keyword">if</span> (isMemberInClass || isMemberInSubClassOf) {
-<span class="caretline"><span class="lineno"> 39 </span>            context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 40 </span>        }
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ThreadDetector.kt">src/main/java/com/lint/core/detector/ThreadDetector.kt</a>:40</span>: <span class="message">"Thread()" looks like a call; surround with backtics in string to display as symbol, e.g. `Thread()`</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>        node: UCallExpression,
+<span class="lineno"> 38 </span>        constructor: PsiMethod
+<span class="lineno"> 39 </span>    ) {
+<span class="caretline"><span class="lineno"> 40 </span>        context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 41 </span>    }
+<span class="lineno"> 42 </span>}</pre>
+
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ToastDetector.kt">src/main/java/com/lint/core/detector/ToastDetector.kt</a>:23</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
+<span class="lineno"> 21 </span>            <span class="string">"ToastStandard"</span>,
+<span class="lineno"> 22 </span>            <span class="string">"Toast使用不规范"</span>,
+<span class="caretline"><span class="lineno"> 23 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 24 </span>            Category.MESSAGES,
+<span class="lineno"> 25 </span>            <span class="number">7</span>,
+<span class="lineno"> 26 </span>            Severity.FATAL,
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ThreadDetector.kt">src/main/java/com/lint/core/detector/ThreadDetector.kt</a>:22</span>: <span class="message">"Thread()" looks like a call; surround with backtics in string to display as symbol, e.g. `Thread()`</span><br /><pre class="errorlines">
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 20 </span>            <span class="string">"ThreadStandard"</span>,
-<span class="lineno"> 21 </span>            <span class="string">"Thread使用不规范"</span>,
-<span class="caretline"><span class="lineno"> 22 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 23 </span>            Category.MESSAGES,
-<span class="lineno"> 24 </span>            <span class="number">7</span>,
-<span class="lineno"> 25 </span>            Severity.FATAL,
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ThreadDetector.kt">src/main/java/com/lint/core/detector/ThreadDetector.kt</a>:39</span>: <span class="message">"Thread()" looks like a call; surround with backtics in string to display as symbol, e.g. `Thread()`</span><br /><pre class="errorlines">
-<span class="lineno"> 36 </span>        node: UCallExpression,
-<span class="lineno"> 37 </span>        constructor: PsiMethod
-<span class="lineno"> 38 </span>    ) {
-<span class="caretline"><span class="lineno"> 39 </span>        context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 40 </span>    }
-<span class="lineno"> 41 </span>}</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ToastDetector.kt">src/main/java/com/lint/core/detector/ToastDetector.kt</a>:22</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
-<span class="lineno"> 19 </span>        <span class="keyword">val</span> ISSUE = Issue.create(
-<span class="lineno"> 20 </span>            <span class="string">"ToastStandard"</span>,
-<span class="lineno"> 21 </span>            <span class="string">"Toast使用不规范"</span>,
-<span class="caretline"><span class="lineno"> 22 </span>            <span class="warning">MESSAGE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 23 </span>            Category.MESSAGES,
-<span class="lineno"> 24 </span>            <span class="number">7</span>,
-<span class="lineno"> 25 </span>            Severity.FATAL,
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ToastDetector.kt">src/main/java/com/lint/core/detector/ToastDetector.kt</a>:39</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
-<span class="lineno"> 36 </span>        <span class="keyword">val</span> isMemberInSubClassOf =
-<span class="lineno"> 37 </span>            context.evaluator.isMemberInSubClassOf(method, <span class="string">"android.widget.Toast"</span>, <span class="keyword">true</span>)
-<span class="lineno"> 38 </span>        <span class="keyword">if</span> (isMemberInClass || isMemberInSubClassOf) {
-<span class="caretline"><span class="lineno"> 39 </span>            context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 40 </span>        }
-<span class="lineno"> 41 </span>    }
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/XmlSpacingDetector.kt">src/main/java/com/lint/core/detector/XmlSpacingDetector.kt</a>:42</span>: <span class="message">Lint checks should not be printing to console; use <code>LintClient.log</code> instead</span><br /><pre class="errorlines">
-<span class="lineno"> 39 </span>   .filterNot { it.index == contents.size - <span class="number">1</span> }
-<span class="lineno"> 40 </span>   .toList()
-<span class="lineno"> 41 </span>   .forEach {
-<span class="caretline"><span class="lineno"> 42 </span>       <span class="warning">println(<span class="string">"空格测试"</span>+it.toString())</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 43 </span>       <span class="keyword">val</span> location =
-<span class="lineno"> 44 </span>           Location.create(context.file, SourcePosition(it.index, <span class="number">0</span>, it.value.length))
-<span class="lineno"> 45 </span>       <span class="keyword">val</span> fix = fix()
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ToastDetector.kt">src/main/java/com/lint/core/detector/ToastDetector.kt</a>:40</span>: <span class="message">"ToastUtil" looks like a code reference; surround with backtics in string to display as symbol, e.g. `ToastUtil`</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>        <span class="keyword">val</span> isMemberInSubClassOf =
+<span class="lineno"> 38 </span>            context.evaluator.isMemberInSubClassOf(method, ANDROID_TOAST, <span class="keyword">true</span>)
+<span class="lineno"> 39 </span>        <span class="keyword">if</span> (isMemberInClass || isMemberInSubClassOf) {
+<span class="caretline"><span class="lineno"> 40 </span>            context.report(ISSUE, node, context.getLocation(node), <span class="warning">MESSAGE</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>        }
+<span class="lineno"> 42 </span>    }
 </pre>
 
 </div>
@@ -572,24 +603,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:10</span>: <span class="message">org.jetbrains.uast.kotlin.KotlinUFile is UAST implementation. Consider using one of its corresponding UAST interfaces: <code>UFile</code>, <code>UAnnotated</code></span><br /><pre class="errorlines">
-<span class="lineno">  7 </span>import org.jetbrains.uast.UCallExpression
-<span class="lineno">  8 </span>import org.jetbrains.uast.UTryExpression
-<span class="lineno">  9 </span>import org.jetbrains.uast.getParentOfType
-<span class="caretline"><span class="lineno"> 10 </span><span class="warning">import org.jetbrains.uast.kotlin.KotlinUFile</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 11 </span>
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:11</span>: <span class="message">org.jetbrains.uast.kotlin.KotlinUFile is UAST implementation. Consider using one of its corresponding UAST interfaces: <code>UFile</code>, <code>UAnnotated</code></span><br /><pre class="errorlines">
+<span class="lineno">  8 </span>import org.jetbrains.uast.UCallExpression
+<span class="lineno">  9 </span>import org.jetbrains.uast.UTryExpression
+<span class="lineno"> 10 </span>import org.jetbrains.uast.getParentOfType
+<span class="caretline"><span class="lineno"> 11 </span><span class="warning">import org.jetbrains.uast.kotlin.KotlinUFile</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 12 </span>
-<span class="lineno"> 13 </span><span class="javadoc">/**
+<span class="lineno"> 13 </span>
+<span class="lineno"> 14 </span><span class="javadoc">/**
 </span></pre>
 
-<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:70</span>: <span class="message">org.jetbrains.uast.kotlin.KotlinUFile is UAST implementation. Consider using one of its corresponding UAST interfaces: <code>UFile</code>, <code>UAnnotated</code></span><br /><pre class="errorlines">
-<span class="lineno"> 67 </span><span class="javadoc">     * 是否已经做了 try处理
-</span><span class="lineno"> 68 </span><span class="javadoc">     */</span>
-<span class="lineno"> 69 </span>    private <span class="keyword">fun</span> isWrappedByTryCatch(node: UCallExpression, context: JavaContext): Boolean {
-<span class="caretline"><span class="lineno"> 70 </span>        <span class="keyword">if</span> (context.uastFile <span class="keyword">is</span> <span class="warning">KotlinUFile</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 71 </span>            <span class="keyword">return</span> node.uastParent?.getParentOfType&lt;UTryExpression>(<span class="keyword">true</span>) != <span class="keyword">null</span>
-<span class="lineno"> 72 </span>        }
-<span class="lineno"> 73 </span>        <span class="keyword">var</span> parent = node.sourcePsi?.parent
+<span class="location"><a href="../../src/main/java/com/lint/core/detector/ParseDetector.kt">src/main/java/com/lint/core/detector/ParseDetector.kt</a>:71</span>: <span class="message">org.jetbrains.uast.kotlin.KotlinUFile is UAST implementation. Consider using one of its corresponding UAST interfaces: <code>UFile</code>, <code>UAnnotated</code></span><br /><pre class="errorlines">
+<span class="lineno"> 68 </span><span class="javadoc">     * 是否已经做了 try处理
+</span><span class="lineno"> 69 </span><span class="javadoc">     */</span>
+<span class="lineno"> 70 </span>    private <span class="keyword">fun</span> isWrappedByTryCatch(node: UCallExpression, context: JavaContext): Boolean {
+<span class="caretline"><span class="lineno"> 71 </span>        <span class="keyword">if</span> (context.uastFile <span class="keyword">is</span> <span class="warning">KotlinUFile</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 72 </span>            <span class="keyword">return</span> node.uastParent?.getParentOfType&lt;UTryExpression>(<span class="keyword">true</span>) != <span class="keyword">null</span>
+<span class="lineno"> 73 </span>        }
+<span class="lineno"> 74 </span>        <span class="keyword">var</span> parent = node.sourcePsi?.parent
 </pre>
 
 </div>

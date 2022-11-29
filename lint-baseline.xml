@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.0" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.0)" variant="all" version="7.2.0">
+
+    <issue
+        id="SerializableClassStandard"
+        message="该对象必须要实现Serializable接口，因为外部类实现了Serializable接口"
+        errorLine1="    val data: BData,"
+        errorLine2="              ~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/AData.kt"
+            line="11"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="SerializableClassStandard"
+        message="该对象必须要实现Serializable接口，因为外部类实现了Serializable接口"
+        errorLine1="    val cData: CData"
+        errorLine2="               ~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/AData.kt"
+            line="12"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="SerializableClassStandard"
+        message="该对象必须要实现Serializable接口，因为外部类实现了Serializable接口"
+        errorLine1="    var eData: EData? = null"
+        errorLine2="               ~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/DData.kt"
+            line="12"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="RawColorStandard"
+        message="颜色值应全部定义为颜色资源。这有一个好处，即您可以在一个文件中轻松查看所有颜色。例如:一个好处是更容易添加深色主题。"
+        errorLine1="        android:textColor=&quot;#ffffff&quot;"
+        errorLine2="                           ~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="25"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="RawColorStandard"
+        message="颜色值应全部定义为颜色资源。这有一个好处，即您可以在一个文件中轻松查看所有颜色。例如:一个好处是更容易添加深色主题。"
+        errorLine1="                    android:color=&quot;#44000000&quot;"
+        errorLine2="                                   ~~~~~~~~~">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher_foreground.xml"
+            line="16"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="RawColorStandard"
+        message="颜色值应全部定义为颜色资源。这有一个好处，即您可以在一个文件中轻松查看所有颜色。例如:一个好处是更容易添加深色主题。"
+        errorLine1="                    android:color=&quot;#00000000&quot;"
+        errorLine2="                                   ~~~~~~~~~">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher_foreground.xml"
+            line="19"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="        android:layout_width=&quot;10dp&quot;"
+        errorLine2="                              ~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="24"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="            android:layout_width=&quot;50dp&quot;"
+        errorLine2="                                  ~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="88"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="            android:layout_marginLeft=&quot;4dp&quot;"
+        errorLine2="                                       ~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="89"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="        android:layout_width=&quot;20dp&quot;"
+        errorLine2="                              ~~~~">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="8"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="        android:layout_marginLeft=&quot;10dp&quot;"
+        errorLine2="                                   ~~~~">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="10"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="RawDimenStandard"
+        message="dimen都应该被定义为dimen资源。这的好处是，您可以在一个文件中轻松查看所有dimen。还有一个好处是，当设计师更改整个应用程序的轮廓时，您只需在一个地方进行调整"
+        errorLine1="        android:layout_marginTop=&quot;10dp&quot;"
+        errorLine2="                                  ~~~~">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="11"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="InlinedApi"
+        message="Field requires API level 28 (current min is 21): `android.Manifest.permission#ACCEPT_HANDOVER`"
+        errorLine1="        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCEPT_HANDOVER)"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="31"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="MissingConstraints"
+        message="This view is not constrained. It only has designtime positions, so it will jump to (0,0) at runtime unless you add the constraints"
+        errorLine1="        &lt;androidx.appcompat.widget.AppCompatTextView"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="87"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.7.0 is available: 1.9.0"
+        errorLine1="    implementation &apos;androidx.core:core-ktx:1.7.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="41"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.3.0 is available: 1.5.1"
+        errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.3.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="42"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.4.0 is available: 1.7.0"
+        errorLine1="    implementation &apos;com.google.android.material:material:1.4.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="43"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.0.4 is available: 2.1.4"
+        errorLine1="    implementation &apos;androidx.constraintlayout:constraintlayout:2.0.4&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="44"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.3 is available: 1.1.4"
+        errorLine1="    androidTestImplementation &apos;androidx.test.ext:junit:1.1.3&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="46"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.4.0 is available: 3.5.0"
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.4.0&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="47"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="UseCompatLoadingForDrawables"
+        message="Use `ResourcesCompat.getDrawable()`"
+        errorLine1="        resources.getDrawable(R.drawable.ic_launcher_background)"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="51"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ActivityStandard"
+        message="Activity应统一继承自【com.tsy.base.activity.BaseActivity】或其子类"
+        errorLine1="class MainActivity : AppCompatActivity(), View.OnClickListener {"
+        errorLine2="      ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="16"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="AdapterStandard"
+        message="Adapter应继承自【com.tsy.base.adapter.BaseViewBindingAdapter】或【com.chad.library.adapter.base.BaseProviderMultiAdapter】或其子类"
+        errorLine1="class TestAdapter:RecyclerView.Adapter&lt;RecyclerView.ViewHolder>() {"
+        errorLine2="      ~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/TestAdapter.kt"
+            line="11"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="ButtonStandard"
+        message="建议使用项目封装的【com.tsy.widget.button.XButton】作为Button"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatButton"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="32"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ButtonStandard"
+        message="建议使用项目封装的【com.tsy.widget.button.XButton】作为Button"
+        errorLine1="    &lt;Button"
+        errorLine2="     ~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="36"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="CardStandard"
+        message="建议使用项目封装的【com.tsy.widget.XCardView】作为CardView"
+        errorLine1="    &lt;androidx.cardview.widget.CardView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="48"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="CheckBoxStandard"
+        message="建议使用项目封装的【com.tsy.widget.XCheckBox】作为CheckBox"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatCheckBox"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="52"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="CheckBoxStandard"
+        message="建议使用项目封装的【com.tsy.widget.XCheckBox】作为CheckBox"
+        errorLine1="    &lt;CheckBox"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="56"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ClickStandard"
+        message="请使用onDebouncedClick替换setOnClickListener，可以有效防重点击"
+        errorLine1="        View(this).setOnClickListener{"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="43"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="ClickStandard"
+        message="请使用onDebouncedClick替换setOnClickListener，可以有效防重点击"
+        errorLine1="        AppCompatTextView(this).setOnClickListener {"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="47"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="ColorCasingStandard"
+        message="颜色值应为大写字母，例如:#FF0099有效，而#ff0099无效，因为ff应该大写"
+        errorLine1="        android:textColor=&quot;#ffffff&quot;"
+        errorLine2="                           ~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="25"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="DialogStandard"
+        message="弹窗应该使用【XPopup】三方弹窗，以便统一管理"
+        errorLine1="class CustomDialog(context: Context) : Dialog(context) {"
+        errorLine2="      ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/CustomDialog.kt"
+            line="15"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="EditTextStandard"
+        message="建议使用项目封装的【com.tsy.widget.edit.XEditText】作为EditText"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatEditText"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="23"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="EditTextStandard"
+        message="建议使用项目封装的【com.tsy.widget.edit.XEditText】作为EditText"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="28"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ImageStandard"
+        message="建议使用项目封装的【com.tsy.widget.XImageView】作为ImageView"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatImageView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="40"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ImageStandard"
+        message="建议使用项目封装的【com.tsy.widget.XImageView】作为ImageView"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="44"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="IntentStandard"
+        message="模块法开发中，为了减少类的耦合，建议使用ARouter作为路由导航"
+        errorLine1="        context.startActivity(Intent())"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/CustomDialog.kt"
+            line="18"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="IntentStandard"
+        message="模块法开发中，为了减少类的耦合，建议使用ARouter作为路由导航"
+        errorLine1="        (context as Activity).startActivity(Intent())"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/CustomDialog.kt"
+            line="19"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="IntentStandard"
+        message="模块法开发中，为了减少类的耦合，建议使用ARouter作为路由导航"
+        errorLine1="        startActivity(intent)"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="54"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="LogStandard"
+        message="规范日志使用，建议使用项目工具类Logger"
+        errorLine1="        Log.d(&quot;1&quot;, &quot;2&quot;)"
+        errorLine2="        ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="22"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="PermissionStandard"
+        message="请统一使用PermissionHelper替换系统权限获取"
+        errorLine1="        ContextCompat.checkSelfPermission(this, Manifest.permission.ACCEPT_HANDOVER)"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="31"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RecyclerViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XRecyclerView】作为RecyclerView"
+        errorLine1="    &lt;androidx.recyclerview.widget.RecyclerView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="72"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="RecyclerViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XRecyclerView】作为RecyclerView"
+        errorLine1="    &lt;ListView"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="78"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ResourcesGetDrawableStandard"
+        message="应该使用ContextCompat或带有Theme Overload 的方法，而不是getDrawable()。"
+        errorLine1="        resources.getDrawable(R.drawable.ic_launcher_background)"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="51"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ScrollViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XNestedScrollView】作为ScrollView"
+        errorLine1="    &lt;androidx.core.widget.NestedScrollView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="60"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ScrollViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XNestedScrollView】作为ScrollView"
+        errorLine1="    &lt;ScrollView"
+        errorLine2="     ~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="64"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ShapeableImageStandard"
+        message="建议使用项目封装的【com.tsy.widget.XShapeableImageView】作为ShapeableImageView"
+        errorLine1="    &lt;com.google.android.material.imageview.ShapeableImageView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="94"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TabLayoutStandard"
+        message="建议使用项目封装的【com.tsy.widget.XTabLayout】作为TabLayout"
+        errorLine1="    &lt;com.google.android.material.tabs.TabLayout"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="68"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TextViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XTextView】作为TextView"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatTextView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="10"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TextViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XTextView】作为TextView"
+        errorLine1="    &lt;TextView"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="19"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TextViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XTextView】作为TextView"
+        errorLine1="        &lt;androidx.appcompat.widget.AppCompatTextView"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="87"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="TextViewStandard"
+        message="建议使用项目封装的【com.tsy.widget.XTextView】作为TextView"
+        errorLine1="    &lt;androidx.appcompat.widget.AppCompatTextView"
+        errorLine2="     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="7"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ThreadStandard"
+        message="请勿直接调用new Thread()，建议使用AsyncTask或统一的线程管理工具类"
+        errorLine1="        Thread()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="27"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ThreadStandard"
+        message="请勿直接调用new Thread()，建议使用AsyncTask或统一的线程管理工具类"
+        errorLine1="        Thread()"
+        errorLine2="        ~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/SuperNormal.kt"
+            line="11"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ToastStandard"
+        message="请统一使用ToastUtil作为轻提示"
+        errorLine1="        Toast.makeText(this, &quot;&quot;, Toast.LENGTH_LONG).show()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/demo/lint/MainActivity.kt"
+            line="25"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 21"
+        errorLine1="        &lt;item name=&quot;android:statusBarColor&quot; tools:targetApi=&quot;l&quot;>?attr/colorPrimaryVariant&lt;/item>"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-night/themes.xml"
+            line="13"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 21"
+        errorLine1="        &lt;item name=&quot;android:statusBarColor&quot; tools:targetApi=&quot;l&quot;>?attr/colorPrimaryVariant&lt;/item>"
+        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="13"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.white1` appears to be unused"
+        errorLine1="    &lt;color name=&quot;white1&quot;>#ffffff&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.layout_test` appears to be unused"
+        errorLine1="&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UselessLeaf"
+        message="This `ScrollView` view is unnecessary (no children, no `background`, no `id`, no `style`)"
+        errorLine1="    &lt;ScrollView"
+        errorLine2="     ~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="64"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="28"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="28"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="44"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="    &lt;EditText"
+        errorLine2="     ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="28"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;4dp&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;4dp&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="89"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts"
+        errorLine1="        android:layout_marginLeft=&quot;10dp&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/layout_test.xml"
+            line="10"
+            column="9"/>
+    </issue>
+
+</issues>
