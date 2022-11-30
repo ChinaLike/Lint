@@ -82,6 +82,9 @@ object Constants {
     /**android Color*/
     const val ANDROID_COLOR = "android.graphics.Color"
 
+    /**android FragmentStateAdapter*/
+    const val ANDROID_FRAGMENT_STATE_ADAPTER = "androidx.viewpager2.adapter.FragmentStateAdapter"
+
 
     /**项目组件包名*/
     const val PROJECT_WIDGET_PACKAGE = "com.tsy.widget"
@@ -120,7 +123,7 @@ object Constants {
     const val PROJECT_TAB_LAYOUT = "$PROJECT_WIDGET_PACKAGE.XTabLayout"
 
     /**项目 RecyclerView*/
-    const val PROJECT_RECYCLER_VIEW = "$PROJECT_WIDGET_PACKAGE.XRecyclerView"
+    const val PROJECT_RECYCLER_VIEW = "$PROJECT_WIDGET_PACKAGE.recyclerview.XRecyclerView"
 
     /**项目 Activity*/
     const val PROJECT_ACTIVITY = "com.tsy.base.activity.BaseActivity"
@@ -142,5 +145,14 @@ object Constants {
 
     /**项目 ResourceUtil*/
     const val PROJECT_RESOURCE_UTIL = "com.core.util.ResourceUtil"
+
+    /**项目 GroupedRecyclerViewAdapter*/
+    const val PROJECT_GROUPED_RECYCLER_VIEW_ADAPTER = "com.donkingliang.groupedadapter.adapter.GroupedRecyclerViewAdapter"
+
+    /**项目 BaseBannerAdapter*/
+    const val PROJECT_BANNER_ADAPTER = "com.zhpan.bannerview.BaseBannerAdapter"
+
+    /**项目 Click*/
+    const val PROJECT_CLICK = "com.core.ex.onDebouncedClick"
 
 }

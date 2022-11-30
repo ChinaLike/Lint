@@ -2,7 +2,9 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
+import com.lint.core.Constants
 import com.lint.core.Constants.ANDROID_VIEW
+import com.lint.core.Constants.PROJECT_CLICK
 import org.jetbrains.uast.UCallExpression
 
 /**
@@ -42,9 +44,26 @@ class OnClickListenerDetector : Detector(), Detector.UastScanner {
                 node,
                 context.getNameLocation(node),
                 MESSAGE,
-                fix().name("Use onDebouncedClick instead").replace().with("onDebouncedClick").build()
+                lintFix(context)
             )
         }
+    }
+
+    private fun  lintFix(context: JavaContext):LintFix{
+        val importClass = context.importPackage(PROJECT_CLICK)
+        val builder = fix()
+            .replace()
+            .with("onDebouncedClick")
+            .build()
+        return fix()
+            .name("Use onDebouncedClick instead")
+            .composite()
+            .add(builder).apply {
+                if (importClass != null){
+                    add(importClass)
+                }
+            }
+            .build()
     }
 
 }

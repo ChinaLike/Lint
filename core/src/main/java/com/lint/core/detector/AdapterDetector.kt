@@ -2,6 +2,9 @@ package com.lint.core.detector
 
 import com.android.tools.lint.detector.api.*
 import com.lint.core.Constants.ANDROID_ADAPTER
+import com.lint.core.Constants.ANDROID_FRAGMENT_STATE_ADAPTER
+import com.lint.core.Constants.PROJECT_BANNER_ADAPTER
+import com.lint.core.Constants.PROJECT_GROUPED_RECYCLER_VIEW_ADAPTER
 import com.lint.core.Constants.PROJECT_MULTI_ADAPTER
 import com.lint.core.Constants.PROJECT_SINGLE_ADAPTER
 import org.jetbrains.uast.UClass
@@ -36,6 +39,18 @@ class AdapterDetector : Detector(), SourceCodeScanner {
 
     override fun visitClass(context: JavaContext, declaration: UClass) {
         val evaluator = context.evaluator
+        //排除FragmentStateAdapter
+        if (evaluator.extendsClass(declaration.javaPsi,ANDROID_FRAGMENT_STATE_ADAPTER,true)){
+            return
+        }
+        //排除GroupedRecyclerViewAdapter
+        if (evaluator.extendsClass(declaration.javaPsi,PROJECT_GROUPED_RECYCLER_VIEW_ADAPTER,true)){
+            return
+        }
+        //排除GroupedRecyclerViewAdapter
+        if (evaluator.extendsClass(declaration.javaPsi,PROJECT_BANNER_ADAPTER,true)){
+            return
+        }
         //判断是否继承指定类
         if (!evaluator.extendsClass(declaration.javaPsi, PROJECT_SINGLE_ADAPTER, true) &&
             !evaluator.extendsClass(declaration.javaPsi, PROJECT_MULTI_ADAPTER, true)
