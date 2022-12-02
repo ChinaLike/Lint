@@ -45,7 +45,8 @@ class LintRegistry : IssueRegistry() {
         RawColorDetector.ISSUE,
         RawDimenDetector.ISSUE,
         SerializableClassDetector.ISSUE,
-        IntentDetector.ISSUE
+        IntentDetector.ISSUE,
+        StringDetector.ISSUE_EMPTY
     )
 
     override val api: Int

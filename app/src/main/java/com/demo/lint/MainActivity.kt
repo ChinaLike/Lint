@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -12,6 +13,8 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import com.core.util.isEmpty
+import com.core.util.isNotNullOrEmpty
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -50,6 +53,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+
+
+        if (TextUtils.isEmpty("")){
+
+        }
+        var a:String? = null
+        if (!a.isNullOrEmpty()){
+            a.isNotEmpty()
+        }
+        if (a.isNotNullOrEmpty()){
+            a.isNotEmpty()
+        }
     }
 
     //测试单行注释，是不是这样!

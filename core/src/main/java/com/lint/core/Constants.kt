@@ -55,6 +55,9 @@ object Constants {
     /**android Resources*/
     const val ANDROID_RESOURCES = "android.content.res.Resources"
 
+    /**android TextUtils*/
+    const val ANDROID_TEXTUTILS = "android.text.TextUtils"
+
     /**android Activity*/
     const val ANDROID_ACTIVITY = "android.app.Activity"
 
@@ -145,6 +148,9 @@ object Constants {
 
     /**项目 ResourceUtil*/
     const val PROJECT_RESOURCE_UTIL = "com.core.util.ResourceUtil"
+
+    /**项目 util*/
+    const val PROJECT_UTIL = "com.core.util"
 
     /**项目 GroupedRecyclerViewAdapter*/
     const val PROJECT_GROUPED_RECYCLER_VIEW_ADAPTER = "com.donkingliang.groupedadapter.adapter.GroupedRecyclerViewAdapter"
