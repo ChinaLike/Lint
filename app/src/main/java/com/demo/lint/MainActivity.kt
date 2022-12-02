@@ -10,10 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
-import com.core.util.isEmpty
 import com.core.util.isNotNullOrEmpty
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -55,14 +52,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
 
 
-        if (TextUtils.isEmpty("")){
+        if (TextUtils.isEmpty("")) {
 
         }
-        var a:String? = null
-        if (!a.isNullOrEmpty()){
+        var a: String? = null
+        if (!a.isNullOrEmpty()) {
             a.isNotEmpty()
         }
-        if (a.isNotNullOrEmpty()){
+        if (a.isNotNullOrEmpty()) {
             a.isNotEmpty()
         }
     }
